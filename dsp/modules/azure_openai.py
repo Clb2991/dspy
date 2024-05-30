@@ -160,7 +160,7 @@ class AzureOpenAI(LM):
     @backoff.on_exception(
         backoff.expo,
         ERRORS,
-        max_time=1000,
+        max_time=1,
         on_backoff=backoff_hdlr,
     )
     def request(self, prompt: str, **kwargs):
